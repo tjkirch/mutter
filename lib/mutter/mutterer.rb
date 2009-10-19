@@ -73,7 +73,7 @@ module Mutter
     # Output to @stream
     #
     def say msg, *styles
-      self.write((ENV['TERM'].include?('color') ? process(msg, *styles) : msg) + "\n")
+      self.write((ENV['TERM'].include?('color') or ENV['COLORTERM'] ? process(msg, *styles) : msg) + "\n")
       return nil
     end
     
