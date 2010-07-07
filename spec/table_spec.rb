@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 
 describe Mutter::Table do
   it "should render tables defined with a block" do
