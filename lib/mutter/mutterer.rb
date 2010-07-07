@@ -70,8 +70,12 @@ module Mutter
       end
     end
 
+    def term_color?
+       self.class.stream.tty? && (ENV['TERM'].include?('color') || ENV['COLORTERM'])
+    end
+
     def color?
-      (ENV['TERM'].include?('color') && self.class.stream.tty?) || self.class.color
+      term_color? || self.class.color
     end
 
     #
